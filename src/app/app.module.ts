@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UpgradeModule } from '@angular/upgrade/static'
+import { UpgradeModule } from '@angular/upgrade/static';
+
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { UpgradeModule } from '@angular/upgrade/static'
   bootstrap: []
 })
 
+
 export class AppModule {
   constructor(private upgrade: UpgradeModule) { }
-  ngDoBootstrap() { 
-    this.upgrade.bootstrap(document.body, ['rainbow'], { strictDi: true }); 
-  }
+  ngDoBootstrap() { this.upgrade.bootstrap(document.body, ['rainbow'], { strictDi: true }); }
 }
+
+
