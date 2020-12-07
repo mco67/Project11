@@ -3,16 +3,12 @@ class Main {
 
     public machin = 'machine';
 
-    static $inject = ["$log", "$rootScope"];
-    constructor(
-        private $log,
-        private $rootScope,
-    ) { }
+    static $inject = ["$log"];
+    constructor(private $log) { }
 
     public $onInit(): void {
        this.$log.error('Main onInit');
     }
-    
 }
 
 export class MainComponent implements ng.IComponentOptions {

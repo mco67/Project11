@@ -10,17 +10,10 @@ import ajsApp from './app/app.module.ajs';
 import states from './app/app.config.ajs';
 states(ajsApp);
 
-ajsApp.controller("MainController", [
-  "$rootScope",
-  function ($rootScope) {
-      $rootScope.toto = "titi";
-  }
-])
-
 setAngularJSGlobal(angular);
 
 if (environment.production) { enableProdMode(); }
 
 platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));
 
-ajsApp.directive("app-root", downgradeComponent({ component: AppComponent }) as angular.IDirectiveFactory)
+ajsApp.directive("app", downgradeComponent({ component: AppComponent }) as angular.IDirectiveFactory)
